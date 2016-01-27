@@ -1,1 +1,6 @@
 Thumbs.db
+.sass-cache/
+node_modules/
+public/css/
+public/js/
+public/lib/
