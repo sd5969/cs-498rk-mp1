@@ -18,7 +18,8 @@ nav {
 	font-variant: small-caps;
 	background-color: darken($base, 15%);
 	color: $white;
-	position: relative;
+	position: fixed;
+	z-index: 1000;
 
 	a {
 		color: $white;
@@ -52,18 +53,70 @@ header {
 	height: 600px;
 	background: url('/media/taj-mahal-sukeindia.jpg') no-repeat right top fixed;
 	background-size: cover;
-}
 
-.header-content {
-	background-color: transparentize($black, .5);
-	border-radius: $default-radius;
-	max-width: 400px;
-	color: $white;
-	margin: 0 auto;
-	padding: 10px;
-	text-align: center;
+	.content {
+		margin: 0 auto;
+		max-width: 500px;
+		text-align: center;
+		position: relative;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+
+	.highlight {
+		padding: 20px;
+		background-color: transparentize($black, .5);
+		font-size: 1.4em;
+		border-radius: $default-radius;
+		color: $white;
+
+		p {
+			margin-bottom: 10px;
+		}
+	}
 }
 
 section {
 	@include container();
+	padding-bottom: 60px;
+}
+
+#about {
+	text-align: center;
+}
+
+#news {
+	background-color: lighten($accent, 20%);
+}
+
+#projects {
+	background-color: darken($accent, 40%);
+	color: $white;
+}
+
+#impact {
+
+}
+
+#sponsor {
+	background-color: $base;
+	color: $white;
+}
+
+div.three-column {
+	width: 30%;
+	display: inline-block;
+	text-align: center;
+}
+
+div.three-column:first-child {
+	border-right: 1px solid lighten($black, 30%);
+}
+
+div.three-column:last-child {
+	border-left: 1px solid lighten($black, 30%);
+}
+
+.larger {
+	font-size: 1.2em;
 }
