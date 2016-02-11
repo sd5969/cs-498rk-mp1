@@ -57,7 +57,7 @@ $(function() {
 
 	var interval = setInterval(carouselProgress, timeBetween);
 
-	// 
+	// modal things
 
 	$('.modal_link').on("click", function() {
 		var modalToOpen = $(this).attr('id').substring(5);
@@ -76,7 +76,7 @@ $(function() {
 
 	// below code taken from http://stackoverflow.com/questions/1403615/use-jquery-to-hide-a-div-when-the-user-clicks-outside-of-it
 
-	$(document).on("mouseup", function (e) {
+	$(document).on("mouseup", function(e) {
 	    var container = $(".modal");
 	    if (!container.is(e.target) // if the target of the click isn't the container...
 	        && container.has(e.target).length === 0) // ... nor a descendant of the container
@@ -84,4 +84,42 @@ $(function() {
 	        closeModals();
 	    }
 	});
+
+	// navbar resize and update - code modified from http://stackoverflow.com/questions/9979827/change-active-menu-item-on-page-scroll
+	
+	var scrollItems = $('nav').find('a').map(function() {
+		var item = $($(this).attr("href"));
+		if(item.length) return item;
+	});
+
+	$(window).on("scroll", function(e) {
+		var fromTop = $(this).scrollTop() + $('nav').outerHeight();
+		console.log($('nav').outerHeight());
+		var aboveWindow = scrollItems.map(function() {
+			if($(this).offset().top <= fromTop) return this;
+		});
+		var current = aboveWindow[aboveWindow.length - 1];
+		if(current.attr('id') === "top") {
+			$("nav a[href='#top']").removeClass("inactive");
+			$("nav").removeClass("inactive");
+		} else {
+			$("nav a[href='#top']").addClass("inactive");
+			$("nav").addClass("inactive");
+		}
+		if(current.length) {
+			$('nav li a').removeClass("active");
+			$("nav li a[href='#" + current.attr('id') + "']").addClass("active");
+		}
+	});
+
+	// smooth scrolling
+	
+	$("a[href*='#']").on("click", function(e) {
+		e.preventDefault();
+		var target = $($(this).attr("href"));
+		if(target.length) {
+			$('html, body').stop();
+			$('html, body').animate({ scrollTop: target.offset().top - 60 }, 1000);
+		}
+	})
 });
