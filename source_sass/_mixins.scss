@@ -12,3 +12,16 @@
 @mixin title_font() {
 	font-family: 'Oswald', sans-serif;
 }
+
+@mixin navbar_a() {
+	a {
+		color: $white;
+		transition: 0.3s;
+		text-decoration: none;
+	}
+
+	a:hover {
+		color: $accent;
+		transition: 0.3s;
+	}
+}

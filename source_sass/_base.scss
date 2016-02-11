@@ -22,16 +22,7 @@ nav {
 	position: fixed;
 	z-index: 1000;
 
-	a {
-		color: $white;
-		transition: 0.3s;
-		text-decoration: none;
-	}
-
-	a:hover {
-		color: $accent;
-		transition: 0.3s;
-	}
+	@include navbar_a();
 
 	.right {
 		font-variant: normal;
@@ -85,6 +76,7 @@ section {
 #about {
 	padding-left: 0px;
 	padding-right: 0px;
+	position: relative;
 }
 
 #news {
@@ -103,6 +95,17 @@ section {
 #sponsor {
 	background-color: $base;
 	color: $white;
+}
+
+footer {
+	background-color: darken($base, 15%);
+	text-align: center;
+	padding: 20px 0px;
+
+	li {
+		color: #fff;
+		display: inline-block;
+	}
 }
 
 div.three-column {
@@ -124,6 +127,11 @@ div.three-column:last-child {
 	padding-left: 0px;
 }
 
+div.middle-column {
+	position: relative;
+	height: 100%;
+}
+
 video#yamuna {
 	max-height: 100%;
 	
@@ -135,6 +143,43 @@ video#yamuna {
 
 .larger {
 	font-size: 1.2em;
+}
+
+.above-h1 {
+	padding-bottom: 10px;
+	color: darken($accent, 30%);
+}
+
+.pad-top {
+	padding-top: 10px;
+}
+
+footer {
+	@include navbar_a();
+
+	li {
+		margin-right: 50px;
+	}
+
+	li:last-child {
+		margin-right: 0px;
+	}
+
+	a {
+		padding-top: 7px;
+		border-radius: 50%;
+		box-sizing: border-box;
+		width: 50px;
+		height: 50px;
+		border: 2px solid $white;
+		vertical-align: middle;
+		transition: 0.3s;
+	}
+
+	a:hover {
+		border: 2px solid $accent;
+		transition: 0.3s;
+	}
 }
 
 h1 {

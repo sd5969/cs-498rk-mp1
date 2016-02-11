@@ -37,6 +37,6 @@ Your webpage will have to implement the features listed below. Note that the exa
 1. **Modal: A section which uses modal windows with additional content - Example**
 1. Video: Embedded video using HTML5 video tag - Example
 1. CSS3 Animations: At least one use of CSS3 animations (e.g. fade in/out, transitions)
-1. **At least one use of scalable vector icons through CSS (e.g. FontAwesome)**
-1. **Inclusion of social media icons**
-1. **Extra Credit: create a original favicon for your page. The best favicon will be used for the class webpage.**
+1. At least one use of scalable vector icons through CSS (e.g. FontAwesome)
+1. Inclusion of social media icons
+1. Extra Credit: create a original favicon for your page. The best favicon will be used for the class webpage.
