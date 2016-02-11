@@ -18,11 +18,12 @@ $(function() {
 		function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);});
 	$('#ROWemail').html(link);
 
-	// carousel - doesn't overanimate with multiple clicks
+	// carousel - auto-progresses, doesn't overanimate with multiple clicks, waits after click
 
 	var currentPic = 0;
+	var timeBetween = 5000;
 
-	$('#next').on("click", function() {
+	function carouselProgress() {
 		if(currentPic >= 4) {
 			currentPic = 0;
 		} else {
@@ -30,9 +31,9 @@ $(function() {
 		}
 		$('#carousel').stop();
 		$('#carousel').animate( {left: ((currentPic * -100) + "%")}, 1000);
-	});
+	}
 
-	$('#prev').on("click", function() {
+	function carouselRegress() {
 		if(currentPic <= 0) {
 			currentPic = 4;
 		} else {
@@ -40,7 +41,21 @@ $(function() {
 		}
 		$('#carousel').stop();
 		$('#carousel').animate( {left: ((currentPic * -100) + "%")}, 1000);
+	}	
+
+	$('#next').on("click", function() {
+		carouselProgress();
+		clearInterval(interval);
+		interval = setInterval(carouselProgress, timeBetween);
 	});
+
+	$('#prev').on("click", function() {
+		carouselRegress();
+		clearInterval(interval);
+		interval = setInterval(carouselProgress, timeBetween);
+	});
+
+	var interval = setInterval(carouselProgress, timeBetween);
 
 	// 
 
