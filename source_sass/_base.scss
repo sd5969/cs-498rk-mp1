@@ -14,6 +14,7 @@ body {
 nav {
 	@include container();
 	@include title_font();
+	text-align: left;
 	font-size: 2.5em;
 	font-variant: small-caps;
 	background-color: darken($base, 15%);
@@ -82,7 +83,8 @@ section {
 }
 
 #about {
-	text-align: center;
+	padding-left: 0px;
+	padding-right: 0px;
 }
 
 #news {
@@ -104,19 +106,57 @@ section {
 }
 
 div.three-column {
-	width: 30%;
+	width: 33%;
 	display: inline-block;
-	text-align: center;
+	box-sizing: border-box;
+	vertical-align: top;
+	padding-left: 40px;
+	padding-right: 40px;
 }
 
 div.three-column:first-child {
-	border-right: 1px solid lighten($black, 30%);
+	padding-left: 40px;
+	padding-right: 0px;
 }
 
 div.three-column:last-child {
-	border-left: 1px solid lighten($black, 30%);
+	padding-right: 40px;
+	padding-left: 0px;
+}
+
+video#yamuna {
+	max-height: 100%;
+	
+}
+
+.overflow-wrapper {
+	overflow: hidden;
 }
 
 .larger {
 	font-size: 1.2em;
+}
+
+h1 {
+	@include title_font();
+	text-align: center;
+	font-size: 2em;
+	font-variant: small-caps;
+	margin-bottom: 20px;
+}
+
+p {
+	margin-bottom: 10px;
+	line-height: 1.5em;
+	font-size: 1.1em;
+}
+
+ol {
+	text-align: left;
+	list-style-type: decimal;
+	line-height: 1.5em;
+
+	li {
+		margin-bottom: 10px;
+	}
 }
