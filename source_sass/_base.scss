@@ -9,6 +9,7 @@ body {
 	@include base_font();
 	font-size: 12pt;
 	background-color: $white;
+	position: relative;
 }
 
 nav {
@@ -162,6 +163,8 @@ section {
 
 #impact {
 	min-height: 400px;
+	padding-left: 0px;
+	padding-right: 0px;
 }
 
 #sponsor {
@@ -234,6 +237,60 @@ video#yamuna {
 	padding-top: 10px;
 }
 
+.modal_link {
+	float: left;
+	width: 20%; /* this is 1/5th of the screen, accounting for having 4 modal_links per line */
+	box-sizing: border-box;
+	min-height: 250px;
+	margin-left: 4%;
+	margin-bottom: 20px;
+	margin-top: 20px;
+	display: inline-block;
+	padding: 10px;
+	border: 2px solid darken($accent, 30%);
+	background-color: lighten($accent, 10%);
+	cursor: pointer;
+
+	img {
+		height: 50px;
+		padding-bottom: 10px;
+		padding-top: 10px;
+	}
+}
+
+.modal_link:hover {
+	border: 2px solid $base;
+}
+
+.modal {
+	display: none;
+	position: fixed;
+	width: 50%;
+	height: 70%;
+	top: 15%;
+	left: 25%;
+	padding: 40px;
+	box-sizing: border-box;
+	background-color: $white;
+	border: 2px solid lighten($black, 75%);
+	overflow: hidden;
+	text-align: center;
+	box-shadow: 5px 5px 10px transparentize($black, .90);
+
+	img {
+		max-width: 75%;
+		max-height: 75%;
+		padding-top: 20px;
+	}
+}
+
+.close {
+	position: absolute;
+	right: 10px;
+	top: 5px;
+	cursor: pointer;
+}
+
 footer {
 	@include navbar_a();
 
@@ -268,4 +325,9 @@ h1 {
 	font-size: 3em;
 	font-variant: small-caps;
 	margin-bottom: 20px;
+}
+
+h2 {
+	@extend h1;
+	font-size: 2em;
 }

@@ -15,7 +15,6 @@
 
 </head>
 <body>
-	<a id="top"></a>
 	<nav>
 		<a href="#top">Rivers of the World Foundation</a>
 		<ul class="right">
@@ -26,7 +25,7 @@
 			<li><a href="#sponsor">Sponsor</a></li>
 		</ul>
 	</nav>
-	<header>
+	<header id="top">
 		<div class="content">
 			<img src="/media/rowlogo.png" alt="row foundation logo" />
 			<div class="highlight">
@@ -82,6 +81,7 @@
 			</div>
 		</section>
 		<section id="news">
+			<span class="fa fa-newspaper-o fa-3x above-h1"></span>
 			<h1>News</h1>
 			<p>We don't have any news yet...</p>
 		</section>
@@ -106,11 +106,42 @@
 			<div class="clear"></div>
 		</section>
 		<section id="impact">
+			<span class="fa fa-lightbulb-o fa-3x above-h1"></span>
 			<h1>Stories</h1>
-			<div class="modal_link">
-				<h2>River</h2>
+			<div class="modal_link" id="link_modal_1">
+				<img src="./media/india.png" alt="indian flag" />
+				<h2>Yamuna River</h2>
 				<p>Click to learn more about the Yamuna River!</p>
 			</div>
+			<div class="modal_link" id="link_modal_2">
+				<h2>Another River</h2>
+				<p>Coming soon!</p>
+			</div>
+			<div class="modal_link" id="link_modal_3">
+				<h2>And Another River</h2>
+				<p>Coming soon!</p>
+			</div>
+			<div class="modal_link" id="link_modal_4">
+				<h2>Fourth River</h2>
+				<p>Coming soon!</p>
+			</div>
+			<div class="modal_link" id="link_modal_5">
+				<h2>That Other River</h2>
+				<p>Coming soon!</p>
+			</div>
+			<div class="modal_link" id="link_modal_6">
+				<h2>Le River</h2>
+				<p>Coming soon!</p>
+			</div>
+			<div class="modal_link" id="link_modal_7">
+				<h2>Yet Another River</h2>
+				<p>Coming soon!</p>
+			</div>
+			<div class="modal_link" id="link_modal_8">
+				<h2>Eighth River</h2>
+				<p>Coming soon!</p>
+			</div>
+			<div class="clear"></div>
 		</section>
 		<section id="sponsor">
 			<p>
@@ -134,6 +165,14 @@
 			<li><a class="circle fa fa-2x fa-youtube" target="_blank" href="https://www.youtube.com/channel/UC53qtSXGj7N-9_xz6WXxDXw"></a></li>
 		</ul>
 	</footer>
+	<div class="modal" id="modal_1">
+		<div class='close fa fa-close fa-3x'></div>
+		<h1>Yamuna River</h1>
+		<p>
+			Here's a cool picture of the Yamuna River near the Taj Mahal!
+		</p>
+		<img src="./media/taj-mahal-sukeindia.jpg" alt="taj mahal yamuna" />
+	</div>
 	<script src="lib/jquery-2.1.3.min/index.js"></script>
 	<script src="js/script.js"></script>
 	<script src="http://localhost:35729/livereload.js"></script>
