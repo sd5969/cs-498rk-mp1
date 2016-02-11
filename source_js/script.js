@@ -74,18 +74,16 @@ $(function() {
 		}
 	});
 
-	// below code taken from http://stackoverflow.com/questions/1403615/use-jquery-to-hide-a-div-when-the-user-clicks-outside-of-it
+	// below modal close code inspired by http://stackoverflow.com/questions/1403615/use-jquery-to-hide-a-div-when-the-user-clicks-outside-of-it
 
 	$(document).on("mouseup", function(e) {
 	    var container = $(".modal");
-	    if (!container.is(e.target) // if the target of the click isn't the container...
-	        && container.has(e.target).length === 0) // ... nor a descendant of the container
-	    {
+	    if (!container.is(e.target) && container.has(e.target).length === 0) {
 	        closeModals();
 	    }
 	});
 
-	// navbar resize and update - code modified from http://stackoverflow.com/questions/9979827/change-active-menu-item-on-page-scroll
+	// navbar resize and update - code inspired by http://stackoverflow.com/questions/9979827/change-active-menu-item-on-page-scroll
 	
 	var scrollItems = $('nav').find('a').map(function() {
 		var item = $($(this).attr("href"));
