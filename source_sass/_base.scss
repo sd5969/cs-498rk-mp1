@@ -69,7 +69,7 @@ nav.inactive {
 header {
 	@include container();
 	height: 600px;
-	background: url('/media/taj-mahal-sukeindia.jpg') no-repeat right top fixed;
+	background: url('../media/taj-mahal-sukeindia.jpg') no-repeat right top fixed;
 	background-size: cover;
 
 	.content {
